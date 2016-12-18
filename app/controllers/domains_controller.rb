@@ -1,5 +1,9 @@
 class DomainsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :admin_only
   before_action :set_domain, only: [:show, :edit, :update, :destroy]
+  before_action :get_users, only: [:new, :edit]
+
 
   # GET /domains
   # GET /domains.json
@@ -65,6 +69,16 @@ class DomainsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_domain
       @domain = Domain.find(params[:id])
+    end
+
+    def get_users
+      @users = User.find_non_admin_user
+    end
+
+    def admin_only
+      unless current_user.admin?
+        redirect_to root_path, :alert => "Access denied."
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

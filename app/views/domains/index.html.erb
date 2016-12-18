@@ -1,8 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Domains</h1>
 
-<table>
+<table border=1>
   <thead>
     <tr>
       <th>Name</th>
@@ -15,7 +13,7 @@
     <% @domains.each do |domain| %>
       <tr>
         <td><%= domain.name %></td>
-        <td><%= domain.user %></td>
+        <td><%= domain.user.name %></td>
         <td><%= link_to 'Show', domain %></td>
         <td><%= link_to 'Edit', edit_domain_path(domain) %></td>
         <td><%= link_to 'Destroy', domain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Domain', new_domain_path %>
+<%= link_to 'Add New Domain', new_domain_path %>

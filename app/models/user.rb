@@ -12,4 +12,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
          
   has_many :domains
+
+  def self.find_non_admin_user
+    where(role: 'user')
+  end
 end

@@ -1,15 +1,22 @@
 class EditorsController < ApplicationController
+	before_action :authenticate_user!
+	before_filter :authorize_admin, only: :create
+
+	def new
+		@user = User.new
+	end
 
 	def create
-		puts "HHHHHHHHHHH\n"
-		puts sign_up_params.inspect
-	    build_resource(sign_up_params)
-	    if resource.save
-	      	redirect_to admin_editors_path
-	    else
-	    	puts "KKKKKKKKKK\n"
-	      	clean_up_passwords resource
-	      	respond_with resource
-	    end
+    	
   	end
+
+  	private
+
+	# This should probably be abstracted to ApplicationController
+  	# as shown by diego.greyrobot
+  	def authorize_admin
+    	return unless !current_user.admin?
+    	redirect_to root_path, alert: 'Admins only!'
+  	end
+  
 end
