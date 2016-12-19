@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: password
+  password: 
   host: localhost
 
 development:
@@ -49,6 +49,4 @@ test:
 #
 production:
   <<: *default
-  database: tradingApp_production
-  username: tradingApp
-  password: <%= ENV['TRADINGAPP_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DATABASE_URL']%>
