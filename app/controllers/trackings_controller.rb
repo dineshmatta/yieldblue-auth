@@ -1,9 +1,11 @@
 class TrackingsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_tracking, only: [:show, :edit, :update, :destroy]
 
   # GET /trackings
   # GET /trackings.json
   def index
+    @domains =  current_user.domains
     @trackings = Tracking.all
   end
 

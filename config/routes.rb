@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 	
 	devise_scope :user do
 	  authenticated :user do
-	    root :to => 'visitors#index'
+	    root :to => 'trackings#index'
 	  end
 	  unauthenticated :user do
 	    root :to => 'devise/sessions#new', as: :unauthenticated_root
