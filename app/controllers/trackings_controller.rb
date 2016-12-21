@@ -7,7 +7,12 @@ class TrackingsController < ApplicationController
   # GET /trackings.json
   def index
     @domains =  current_user.domains
-    @trackings = Tracking.all
+    
+    @trackings = unless current_user.domains.blank? 
+          Tracking.where("page_url LIKE ?", current_user.domains.first.name)
+    else 
+      Tracking.all
+    end
   end
 
   # GET /trackings/1
