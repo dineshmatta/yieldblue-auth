@@ -15,7 +15,7 @@ module RailsDeviseRoles
 
         resource "#{ENV['tracking_url']}",
           :headers => :any,
-          :methods => [:get, :post],
+          :methods => [:post],
           :credentials => true,
           :max_age => 0
 

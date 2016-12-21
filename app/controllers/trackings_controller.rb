@@ -1,5 +1,6 @@
 class TrackingsController < ApplicationController
-  #before_action :authenticate_user!, except: [:create]
+  before_action :authenticate_user!, except: [:create]
+  skip_before_action  :verify_authenticity_token, only: [:create]
   before_action :set_tracking, only: [:show, :edit, :update, :destroy]
 
   # GET /trackings
