@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 	  end
 	end
 
+	get 'update_trackings' => 'trackings#update_trackings'
+
 	resources :users, except: :create
 
 	post 'create_user' => 'users#create', as: :create_user

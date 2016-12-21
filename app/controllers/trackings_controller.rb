@@ -13,6 +13,7 @@ class TrackingsController < ApplicationController
   # GET /trackings/1
   # GET /trackings/1.json
   def show
+
   end
 
   # GET /trackings/new
@@ -64,10 +65,18 @@ class TrackingsController < ApplicationController
     end
   end
 
+  def update_trackings
+    @trackings = Tracking.where("page_url LIKE ?", params[:page_url])
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tracking
       @tracking = Tracking.find(params[:id])
+      @trackings = Tracking.where("page_url LIKE ?", params[:page_url])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
