@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :recommendations
   resources :trackings
 	resources :domains
 	devise_for :users

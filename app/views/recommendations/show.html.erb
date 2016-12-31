@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @recommendation.url %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @recommendation.keywords %>
+</p>
+
+<p>
+  <strong>Video urls:</strong>
+  <%= @recommendation.video_urls %>
+</p>
+
+<p>
+  <strong>Video ids:</strong>
+  <%= @recommendation.video_ids %>
+</p>
+
+<%= link_to 'Edit', edit_recommendation_path(@recommendation) %> |
+<%= link_to 'Back', recommendations_path %>

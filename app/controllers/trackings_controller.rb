@@ -9,7 +9,7 @@ class TrackingsController < ApplicationController
     @domains =  current_user.domains
     
     @trackings = unless current_user.domains.blank? 
-          Tracking.where("page_url LIKE ?", current_user.domains.first.name)
+      Tracking.where("page_url LIKE ?", current_user.domains.first.name)
     else 
       Tracking.all
     end
