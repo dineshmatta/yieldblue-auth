@@ -1,4 +1,5 @@
 class RecommendationsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_recommendation, only: [:show, :edit, :update, :destroy]
 
   # GET /recommendations
