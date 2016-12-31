@@ -13,5 +13,6 @@
     <li><%= link_to 'Domains', domains_path %></li>
   <% else %>
     <li class='js-domain-dd'><%= select_tag "domains", options_from_collection_for_select(@domains, "id", "name", "1") , id: 'gloabl_dropdown'%></li>
+    <li><%= link_to 'Recommendations', recommendations_path %></li>
   <% end %>
 <% end %>
