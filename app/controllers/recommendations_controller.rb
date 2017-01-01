@@ -70,6 +70,6 @@ class RecommendationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recommendation_params
-      params.require(:recommendation).permit(:url, :keywords, :video_urls, :video_ids)
+      params.require(:recommendation).permit(:url, :keywords => [], :video_urls => [], :video_ids => [])
     end
 end
