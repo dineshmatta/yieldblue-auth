@@ -17,9 +17,9 @@
     <% @recommendations.each do |recommendation| %>
       <tr>
         <td><%= recommendation.url %></td>
-        <td><%= recommendation.keywords %></td>
-        <td><%= recommendation.video_urls %></td>
-        <td><%= recommendation.video_ids %></td>
+        <td><%= YAML::load(recommendation.keywords).to_sentence %></td>
+        <td><%= YAML::load(recommendation.video_urls).to_sentence %></td>
+        <td><%= YAML::load(recommendation.video_ids).to_sentence %></td>
         <td><%= link_to 'Show', recommendation %></td>
         <td><%= link_to 'Edit', edit_recommendation_path(recommendation) %></td>
         <td><%= link_to 'Destroy', recommendation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
