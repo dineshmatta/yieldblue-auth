@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Url:</strong>
   <%= @recommendation.url %>
@@ -7,17 +5,17 @@
 
 <p>
   <strong>Keywords:</strong>
-  <%= @recommendation.keywords %>
+  <%= @recommendation.keywords.to_sentence %>
 </p>
 
 <p>
   <strong>Video urls:</strong>
-  <%= @recommendation.video_urls %>
+  <%= @recommendation.video_urls.to_sentence %>
 </p>
 
 <p>
   <strong>Video ids:</strong>
-  <%= @recommendation.video_ids %>
+  <%= @recommendation.video_ids.to_sentence %>
 </p>
 
 <%= link_to 'Edit', edit_recommendation_path(@recommendation) %> |

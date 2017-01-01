@@ -41,6 +41,8 @@ class RecommendationsController < ApplicationController
   # PATCH/PUT /recommendations/1
   # PATCH/PUT /recommendations/1.json
   def update
+    p 'ffffffffff\n'
+    p recommendation_params
     respond_to do |format|
       if @recommendation.update(recommendation_params)
         format.html { redirect_to @recommendation, notice: 'Recommendation was successfully updated.' }

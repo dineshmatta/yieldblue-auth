@@ -18,17 +18,17 @@
 
   <div class="field">
     <%= f.label :keywords %>
-    <%= f.text_area :keywords, name: 'keywords[]', value: f.object.keywords.join(', ') %>
+    <%= f.text_area :keywords, name: 'recommendation[keywords][]', value: f.object.keywords.join(', ') %>
   </div>
 
   <div class="field">
     <%= f.label :video_urls %>
-    <%= f.text_area :video_urls, name: 'video_urls[]', value: f.object.video_urls.join(', ') %>
+    <%= f.text_area :video_urls, name: 'recommendation[video_urls][]', value: f.object.video_urls.join(', ') %>
   </div>
 
   <div class="field">
     <%= f.label :video_ids %>
-    <%= f.text_area :video_ids, name: 'video_ids[]', value: f.object.video_ids.join(', ') %>
+    <%= f.text_area :video_ids, name: 'recommendation[video_ids][]', value: f.object.video_ids.join(', ') %>
   </div>
 
   <div class="actions">
