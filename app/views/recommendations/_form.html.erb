@@ -13,17 +13,17 @@
 
   <div class="field">
     <%= f.label :url %>
-    <%= f.text_area :url %>
+    <%= f.text_area :url, style: "height: 100px; width: 300px" %>
   </div>
 
   <div class="field">
     <%= f.label :keywords %>
-    <%= f.text_area :keywords, name: 'recommendation[keywords][]', value: f.object.keywords.join(', ') %>
+    <%= f.text_area :keywords, name: 'recommendation[keywords][]', value: f.object.keywords.join(', '), style: "height: 100px; width: 300px" %>
   </div>
 
   <div class="field">
     <%= f.label :video_urls %>
-    <%= f.text_area :video_urls, name: 'recommendation[video_urls][]', value: f.object.video_urls.join(', ') %>
+    <%= f.text_area :video_urls, name: 'recommendation[video_urls][]', value: f.object.video_urls.join(', '), style: "height: 100px; width: 400px" %>
   </div>
 
 
