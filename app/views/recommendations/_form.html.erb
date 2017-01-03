@@ -26,10 +26,6 @@
     <%= f.text_area :video_urls, name: 'recommendation[video_urls][]', value: f.object.video_urls.join(', ') %>
   </div>
 
-  <div class="field">
-    <%= f.label :video_ids %>
-    <%= f.text_area :video_ids, name: 'recommendation[video_ids][]', value: f.object.video_ids.join(', ') %>
-  </div>
 
   <div class="actions">
     <%= f.submit %>

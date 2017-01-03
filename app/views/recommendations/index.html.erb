@@ -2,14 +2,14 @@
 
 <h1>Recommendations</h1>
 
-<table>
+<table border="1px">
   <thead>
     <tr>
       <th>Url</th>
       <th>Keywords</th>
       <th>Video urls</th>
-      <th>Video ids</th>
-      <th colspan="3"></th>
+<!--       <th>Video ids</th>
+ -->      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -19,7 +19,7 @@
         <td><%= recommendation.url %></td>
         <td><%= recommendation.keywords.to_sentence %></td>
         <td><%= recommendation.video_urls.to_sentence %></td>
-        <td><%= recommendation.video_ids.to_sentence %></td>
+        <!-- <td><%= recommendation.video_ids.to_sentence %></td> -->
         <td><%= link_to 'Show', recommendation %></td>
         <td><%= link_to 'Edit', edit_recommendation_path(recommendation) %></td>
         <td><%= link_to 'Destroy', recommendation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
