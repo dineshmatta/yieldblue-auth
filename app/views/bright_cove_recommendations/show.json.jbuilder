@@ -1,0 +1,1 @@
+json.partial! "bright_cove_recommendations/bright_cove_recommendation", bright_cove_recommendation: @bright_cove_recommendation

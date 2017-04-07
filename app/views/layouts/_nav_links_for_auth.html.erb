@@ -12,6 +12,7 @@
     <li><%= link_to 'Users', users_path %></li>
     <li><%= link_to 'Domains', domains_path %></li>
     <li><%= link_to 'Recommendations', recommendations_path %></li>
+    <li><%= link_to 'BrightCov Recommendations', bright_cove_recommendations_path %></li>
   <% else %>
     <li class='js-domain-dd'><%= select_tag "domains", options_from_collection_for_select(@domains || current_user.domains, "id", "name", "1") , id: 'gloabl_dropdown'%></li>
     <li><%= link_to 'Recommendations', recommendations_path %></li>

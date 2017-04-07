@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bright Cove Recommendations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Keywords</th>
+      <th>Video urls</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bright_cove_recommendations.each do |bright_cove_recommendation| %>
+      <tr>
+        <td><%= bright_cove_recommendation.url %></td>
+        <td><%= bright_cove_recommendation.keywords.to_sentence %></td>
+        <td><%= bright_cove_recommendation.video_urls.to_sentence %></td>
+        <td><%= link_to 'Show', bright_cove_recommendation %></td>
+        <td><%= link_to 'Edit', edit_bright_cove_recommendation_path(bright_cove_recommendation) %></td>
+        <td><%= link_to 'Destroy', bright_cove_recommendation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bright Cove Recommendation', new_bright_cove_recommendation_path %>

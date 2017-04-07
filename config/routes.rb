@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bright_cove_recommendations
   resources :recommendations
   resources :trackings
 	resources :domains

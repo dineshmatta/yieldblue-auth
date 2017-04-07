@@ -1,0 +1,1 @@
+json.array! @bright_cove_recommendations, partial: 'bright_cove_recommendations/bright_cove_recommendation', as: :bright_cove_recommendation

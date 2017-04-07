@@ -1,0 +1,18 @@
+<p>
+  <strong>Url:</strong>
+  <%= @bright_cove_recommendation.url %>
+</p>
+
+<p>
+  <strong>Keywords:</strong>
+  <%= @bright_cove_recommendation.keywords.to_sentence %>
+</p>
+
+<p>
+  <strong>Video urls:</strong>
+  <%= @bright_cove_recommendation.video_urls.to_sentence %>
+</p>
+
+
+<%= link_to 'Edit', edit_bright_cove_recommendation_path(@bright_cove_recommendation) %> |
+<%= link_to 'Back', bright_cove_recommendations_path %>
